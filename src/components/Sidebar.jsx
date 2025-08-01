@@ -1,18 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Sidebar.css";
 
-const Sidebar = () => {
+const user = {
+  name: "John Doe",
+  dp: "https://i.pravatar.cc/40"
+};
+
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <div className="w-64 h-screen bg-gray-900 text-white flex flex-col p-5">
-      <h1 className="text-2xl font-bold mb-8">CineConnect</h1>
-      <nav className="flex flex-col space-y-4">
-        <Link to="/booking" className="hover:text-yellow-400">🎟 Booking</Link>
-        <Link to="/subscriptions" className="hover:text-yellow-400">📺 Subscriptions</Link>
-        <Link to="/notifications" className="hover:text-yellow-400">🔔 Notifications</Link>
-        <Link to="/piracy-report" className="hover:text-yellow-400">🚫 Report Piracy</Link>
-        <Link to="/settings" className="hover:text-yellow-400">⚙️ Settings</Link>
-      </nav>
-    </div>
+    <>
+      <div
+        className={`sidebar-overlay ${isOpen ? "show" : ""}`}
+        onClick={toggleSidebar}
+        aria-hidden={!isOpen}
+      ></div>
+
+      <aside className={`box sidebar ${isOpen ? "open" : ""}`}>
+        <nav className="flex flex-col space-y-6 menu">
+          <div className="menu-links">
+            <Link to="/home" className="menu-link" onClick={toggleSidebar}>Home</Link>  
+            <Link to="/booking" className="menu-link" onClick={toggleSidebar}>Booking</Link>
+            <Link to="/subscriptions" className="menu-link" onClick={toggleSidebar}>Subscriptions</Link>
+            <Link to="/notifications" className="menu-link" onClick={toggleSidebar}>Notifications</Link>
+            <Link to="/piracy-report" className="menu-link" onClick={toggleSidebar}>Report Piracy</Link>
+            <Link to="/settings" className="menu-link" onClick={toggleSidebar}>Settings</Link>
+          </div>
+        </nav>
+
+        <div className="user-profile">
+          <img src={user.dp} alt="User Profile" className="user-dp" />
+          <p className="user-name">{user.name}</p>
+        </div>
+      </aside>
+    </>
   );
 };
 
