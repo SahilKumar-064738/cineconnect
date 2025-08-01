@@ -15,11 +15,11 @@ const App = () => {
   return (
     <Router>
       <Topbar toggleSidebar={toggleSidebar} />
-      <div className="app-container">
+
         {/* Sidebar is only visible on mobile via toggling */}
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
         <AppRoutes />
-      </div>
+
     </Router>
   );
 };

@@ -1,33 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Merriweather&family=Oswald:wght@600&display=swap');
+
 .topbar-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
-  color: #007bff;
+  background-color: #121212; /* Dark background for cinematic look */
+  color: #D4AF37; /* Warm gold accent color for main text */
   padding: 12px 24px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Cinzel', serif; /* Cinematic serif font */
+  box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3); /* subtle golden glow */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Hamburger button - visible only on small screens */
+/* Hamburger button */
 .hamburger-btn {
   font-size: 28px;
   background: none;
   border: none;
-  color: #007bff;
+  color: #D4AF37;
   cursor: pointer;
   margin-right: 12px;
   user-select: none;
   padding: 0;
   line-height: 1;
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .hamburger-btn:hover {
-  color: #0056b3;
+  color: #FFD95B; /* lighter gold on hover */
 }
 
 @media screen and (min-width: 768px) {
@@ -37,14 +40,17 @@
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 2px;
   cursor: default;
   user-select: none;
+  font-family: 'Oswald', sans-serif; /* Modern cinematic font for logo */
+  color: #FFD95B; /* lighter gold for logo */
+  flex-shrink: 0;
 }
 
-/* Container for search + dropdown on larger screens */
+/* Container for search + dropdown */
 .search-dropdown-container {
   position: relative;
   flex: 1;
@@ -62,7 +68,7 @@
   }
 }
 
-/* Search box styling */
+/* Search box */
 .search-box {
   flex-grow: 1;
 }
@@ -70,23 +76,30 @@
 .search-box input {
   width: 100%;
   padding: 8px 14px;
-  margin-top: 2vh;
-  border: 1.8px solid #ccc;
+  margin-top: 2vh; /* remove vertical offset for better vertical alignment */
+  border: 1.8px solid #444; /* dark border */
   border-radius: 8px;
   outline: none;
   font-size: 1rem;
+  background-color: #1e1e1e; /* dark input background */
+  color: #eee; /* light text */
+  font-family: 'Merriweather', serif;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.search-box input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+.search-box input::placeholder {
+  color: #aaa; /* subtle light gray placeholder */
 }
 
-/* Dropdown menu container - hidden on small screens */
+.search-box input:focus {
+  border-color: #D4AF37; /* gold border on focus */
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.7);
+}
+
+/* Dropdown container */
 .dropdown-menu-container {
   position: relative;
-  display: none; /* hidden default */
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -98,8 +111,8 @@
 /* Dropdown toggle button */
 .dropdown-toggle-btn {
   background-color: transparent;
-  border: 1.8px solid #007bff;
-  color: #007bff;
+  border: 1.8px solid #D4AF37;
+  color: #D4AF37;
   font-weight: 600;
   font-size: 1rem;
   padding: 6px 12px;
@@ -107,41 +120,43 @@
   cursor: pointer;
   transition: background-color 0.25s ease, color 0.25s ease;
   user-select: none;
+  font-family: 'Cinzel', serif;
 }
 
 .dropdown-toggle-btn:hover,
 .dropdown-toggle-btn:focus {
-  background-color: #007bff;
-  color: white;
+  background-color: #D4AF37;
+  color: #121212;
   outline: none;
 }
 
-/* Dropdown menu styling */
+/* Dropdown menu */
 .dropdown-menu {
   position: absolute;
   top: 110%;
   right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #1e1e1e; /* Dark background */
+  border: 1px solid #555;
   border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.3);
   width: 200px;
   z-index: 1100;
   display: flex;
   flex-direction: column;
+  font-family: 'Merriweather', serif;
 }
 
-/* Individual dropdown link */
+/* Dropdown links */
 .dropdown-link {
   padding: 10px 16px;
   text-decoration: none;
-  color: #007bff;
+  color: #D4AF37;
   font-weight: 500;
   transition: background-color 0.2s ease;
 }
 
 .dropdown-link:hover {
-  background-color: rgba(0, 123, 255, 0.1);
+  background-color: rgba(212, 175, 55, 0.15);
   text-decoration: none;
 }
 
@@ -149,21 +164,23 @@
 .nav-links {
   display: flex;
   gap: 24px;
+  flex-shrink: 0;
 }
 
 .nav-links .nav-link {
   text-decoration: none;
-  color: #007bff;
+  color: #D4AF37;
   font-weight: 600;
   font-size: 1rem;
   padding: 6px 10px;
   border-radius: 6px;
   transition: background-color 0.25s ease, transform 0.25s ease;
   cursor: pointer;
+  font-family: 'Cinzel', serif;
 }
 
 .nav-links .nav-link:hover {
-  background-color: rgba(0, 123, 255, 0.1);
+  background-color: rgba(212, 175, 55, 0.15);
   transform: translateY(-2px);
   text-decoration: underline;
 }
