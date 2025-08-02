@@ -1,0 +1,23 @@
+.movie-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2.1rem 2.5rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2.3rem 1.4rem 3rem 1.4rem;
+  box-sizing: border-box;
+}
+.empty-list-msg {
+  color: #aa9960;
+  font-style: italic;
+  grid-column: 1/-1;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .movie-list-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    padding: 1rem 0.2rem 1.5rem 0.2rem;
+  }
+}

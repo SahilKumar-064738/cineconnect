@@ -1,18 +1,36 @@
 import React, { useState } from "react";
-import FilterBar from "../../components/FilterBar";
 import MovieList from "./MovieList";
 import ReferForm from "./ReferForm";
+import "./Booking.css";
 
-// Temporary mock data (replace with API call later)
+// Example movie data with images
 const mockMovies = [
-  { id: 1, title: "Inception", description: "Sci-fi thriller", isReferred: true },
-  { id: 2, title: "Avatar", description: "Epic adventure", isReferred: false },
-  { id: 3, title: "Interstellar", description: "Space exploration", isReferred: false },
+  {
+    id: 1,
+    title: "Inception",
+    description: "Sci-fi thriller",
+    isReferred: true,
+    image: "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg"
+  },
+  {
+    id: 2,
+    title: "Avatar",
+    description: "Epic adventure",
+    isReferred: false,
+    image: "https://image.tmdb.org/t/p/w500/6EiRUJpuoeQPghrs3YNktfnqOVh.jpg"
+  },
+  {
+    id: 3,
+    title: "Interstellar",
+    description: "Space exploration",
+    isReferred: false,
+    image: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+  }
 ];
 
 const Booking = () => {
-  const [selectedFilter, setSelectedFilter] = useState("all");
-  const [movies, setMovies] = useState(mockMovies);
+  const [movies] = useState(mockMovies);
+
   const [showReferForm, setShowReferForm] = useState(false);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -21,22 +39,33 @@ const Booking = () => {
     setShowReferForm(true);
   };
 
+  const handleBook = (movie) => {
+    alert(`You booked "${movie.title}"!`);
+  };
+
   const handleCloseForm = () => {
     setShowReferForm(false);
     setSelectedMovie(null);
   };
 
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">🎟 Booking</h1>
-      <FilterBar selected={selectedFilter} setSelected={setSelectedFilter} />
+    <div className="booking-root">
+      <div className="booking-header">
+        <h1 className="booking-title">🎟 Book Your Movie</h1>
+        <p className="booking-desc">
+          Discover, book, and refer the latest movies with <b>CineConnect</b>.
+        </p>
+      </div>
       <MovieList
         movies={movies}
-        filter={selectedFilter}
         onRefer={handleRefer}
+        onBook={handleBook}
       />
       {showReferForm && (
-        <ReferForm movie={selectedMovie} onClose={handleCloseForm} />
+        <ReferForm
+          movie={selectedMovie}
+          onClose={handleCloseForm}
+        />
       )}
     </div>
   );

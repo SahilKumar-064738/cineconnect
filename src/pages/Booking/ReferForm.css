@@ -1,0 +1,74 @@
+.refer-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(19, 15, 8, 0.81);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+}
+
+.refer-modal-box {
+  background: #23232c;
+  color: #FFD95B;
+  border-radius: 16px;
+  box-shadow: 0 7px 36px #d4af376b;
+  padding: 2rem 2.5rem 1.6rem 2.5rem;
+  width: 90%;
+  max-width: 470px;
+  position: relative;
+  font-family: 'Merriweather', serif;
+}
+
+.refer-title {
+  color: #FFD95B;
+  font-family: 'Cinzel', serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  text-shadow: 1px 1px 6px rgba(212,175,55,0.23);
+}
+
+.refer-input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
+  border-radius: 8px;
+  border: 1.5px solid #D4AF37;
+  background: #191a22;
+  color: #f0e6a5;
+  font-family: 'Merriweather', serif;
+}
+
+.refer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+}
+
+.refer-cancel, .refer-send {
+  padding: 7px 20px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+}
+.refer-cancel {
+  background: #31313b;
+  color: #ddd19c;
+}
+.refer-cancel:hover {
+  background: #464646;
+}
+.refer-send {
+  background: #D4AF37;
+  color: #23232c;
+  transition: background 0.18s;
+}
+.refer-send:hover {
+  background: #FFD95B;
+  color: #191a22;
+}

@@ -13,6 +13,60 @@
   top: 0;
   z-index: 1000;
 }
+/* Profile avatar to replace Profile text link */
+.profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #D4AF37;
+  object-fit: cover;
+  transition: box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.profile-avatar:hover,
+.profile-avatar:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.8);
+}
+
+/* Profile dropdown menu position */
+.profile-dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 220px;
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Merriweather', serif;
+  z-index: 1100;
+  padding: 8px 0;
+}
+
+/* Reuse dropdown-link styling, just slight padding tweak */
+.profile-dropdown-menu .dropdown-link {
+  padding: 10px 16px;
+  color: #D4AF37;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.profile-dropdown-menu .dropdown-link:hover {
+  background-color: rgba(212, 175, 55, 0.15);
+  text-decoration: none;
+}
+
+/* Remove the previous dropdown-menu-container and toggle button */
+/* You can safely delete their CSS or keep unused */
+
+/* Ensure nav-links container keeps logo, watchlist, and profile avatar in single line */
+/* (You likely already have this based on previous CSS) */
 
 /* Hamburger button */
 .hamburger-btn {
@@ -40,7 +94,7 @@
 }
 
 .logo {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 2px;
   cursor: default;
@@ -74,9 +128,10 @@
 }
 
 .search-box input {
-  width: 100%;
+  width: 80%;
   padding: 8px 14px;
   margin-top: 2vh; /* remove vertical offset for better vertical alignment */
+  margin-left: 2vw;
   border: 1.8px solid #444; /* dark border */
   border-radius: 8px;
   outline: none;
@@ -183,4 +238,46 @@
   background-color: rgba(212, 175, 55, 0.15);
   transform: translateY(-2px);
   text-decoration: underline;
+}
+
+/* Bell icon button near watchlist */
+.notification-bell {
+  font-size: 22px;
+  background: none;
+  border: none;
+  color: #D4AF37;
+  cursor: pointer;
+  margin-left: 12px;
+  padding: 0;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+
+/* Notifications dropdown menu */
+.notifications-dropdown-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 200px;
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(212, 175, 55, 0.4);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Merriweather', serif;
+  z-index: 1100;
+  padding: 8px 0;
+}
+
+/* Responsive: hide notification bell on smaller screens */
+@media screen and (max-width: 767px) {
+  .notification{
+    display: none;
+  }
+}
+
+.notifications{
+    background-color: #121212;
 }

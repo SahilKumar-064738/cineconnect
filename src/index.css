@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   --primary-color: #007bff;
   --primary-hover: #0056b3;
   --secondary-color: #f8f9fa;
@@ -15,7 +15,7 @@
   --transition-fast: 0.2s ease-in-out;
   --sidebar-width: 250px;
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+} */
 
 body {
   font-family: var(--font-main);

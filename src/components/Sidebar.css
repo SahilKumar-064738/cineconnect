@@ -70,8 +70,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding-top: 10px;
-  border-top: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .user-dp {

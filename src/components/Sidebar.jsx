@@ -19,19 +19,19 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <aside className={`box sidebar ${isOpen ? "open" : ""}`}>
         <nav className="flex flex-col space-y-6 menu">
           <div className="menu-links">
-            <Link to="/home" className="menu-link" onClick={toggleSidebar}>Home</Link>  
+            <div className="user-profile">
+              <img src={user.dp} alt="User Profile" className="user-dp" />
+              <p className="user-name">{user.name}</p>
+            </div>
+            <Link to="/home" className="menu-link" onClick={toggleSidebar}>Home</Link>
             <Link to="/booking" className="menu-link" onClick={toggleSidebar}>Booking</Link>
             <Link to="/subscriptions" className="menu-link" onClick={toggleSidebar}>Subscriptions</Link>
             <Link to="/notifications" className="menu-link" onClick={toggleSidebar}>Notifications</Link>
             <Link to="/piracy-report" className="menu-link" onClick={toggleSidebar}>Report Piracy</Link>
-            <Link to="/settings" className="menu-link" onClick={toggleSidebar}>Settings</Link>
+            <Link to="/settings" className="menu-link" onClick={toggleSidebar}>Account</Link>
           </div>
         </nav>
 
-        <div className="user-profile">
-          <img src={user.dp} alt="User Profile" className="user-dp" />
-          <p className="user-name">{user.name}</p>
-        </div>
       </aside>
     </>
   );
